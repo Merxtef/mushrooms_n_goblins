@@ -118,7 +118,7 @@ void DwarfSystem::update(entt::registry& registry, AssetManager& mgr, float dt)
     float mushroomSearchUtility = (dwarf.hunger * dwarf.hunger) / (30.f + 12.f * mushDist);
     float mushroomTreeSearchUtility =
       (dwarf.fatigue * dwarf.fatigue * dwarf.fatigue) * ((mushTreeDist - 8.f) * (mushTreeDist - 8.f) + 50.f)
-      / 300000.f + (dwarf.fatigue > 80.f) * 20;
+      / 300000.f + (dwarf.fatigue > 60.f) * 40 + (dwarf.fatigue > 80.f) * 100;
 
     if (wallSearchUtility > mushroomSearchUtility && wallSearchUtility > mushroomTreeSearchUtility)
     {
